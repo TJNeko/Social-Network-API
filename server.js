@@ -12,8 +12,7 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socialnetwork', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
+  serverSelectionTimeoutMS: 5000,
 });
 
 mongoose.set('debug', true);
